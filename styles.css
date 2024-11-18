@@ -30,6 +30,7 @@ body{
 .logo a{
     font-size: 18px;
     text-decoration: none;
+    color: hsl(338, 100%, 40%);
 }
 
 .logo a:visited {
@@ -38,6 +39,7 @@ body{
 
 .header-link a{
     text-decoration: none;
+    color: black;
 }
 
 .header-link a:visited{
@@ -207,16 +209,111 @@ input{
 
 .radios input{
     appearance: none;
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
     background-color: lightgray;
     border: 2px solid white;
     cursor: pointer;
 }
 
+@keyframes fadeOutUp {
+    0% {
+        opacity: 100;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 100;
+        transform: translateY(0);
+    }
+}
+
+.fade-out{
+    animation: fadeOutUp 1s forwards;
+}
+
+.fade-in {
+    animation: fadeInDown 1s forwards;
+}
+
+/*------------------------- content --------------------------------*/
+
+.content-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.content {
+    display: flex;
+    gap: 10px;
+}
+
+.content-splitter{
+    display: flex;
+    flex-direction: column;
+}
+
+.image-placeholder{
+    width: 230px;
+    height: 400px;
+    background-color: black;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-one{
+    position: relative;
+    top: -200px;
+}
+
+.img-one-five{
+    position: relative;
+    top: -190px;
+}
+
+.img-two{
+    position: relative;
+    top: -100px;
+}
+
+.img-four{
+    position: relative;
+    top: 150px;
+}
 
 
+.img-six{
+    position: relative;
+    top: -100px;
+}
 
+.img-seven{
+    position: relative;
+    top: -200px;
+}
+
+.img-seven-five{
+    position: relative;
+    top: -190px;
+}
 
 
 

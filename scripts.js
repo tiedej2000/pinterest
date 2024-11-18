@@ -48,16 +48,42 @@ function updateCarouselText() {
     const textElement = document.getElementById("carousel-text");
     const radios = document.getElementsByName("carousel");
 
-    radios.forEach((radio, index) => {
-        if (radio.checked) {
-            textElement.textContent = carouselTexts[index];
-            textElement.style.color =  carouselColor[index];
-            radio.style.backgroundColor = carouselColor[index];
-        } else{
-            radio.style.backgroundColor = 'lightgray'
-        }
-    });
+    textElement.classList.add('fade-out')
+
+    setTimeout(() => {
+        radios.forEach((radio, index) => {
+            if (radio.checked) {
+                textElement.textContent = carouselTexts[index];
+                textElement.style.color =  carouselColor[index];
+                radio.style.backgroundColor = carouselColor[index];
+            } else{
+                radio.style.backgroundColor = 'lightgray'
+            }
+        });
+
+        textElement.classList.remove("fade-out");
+        textElement.classList.add("fade-in");
+
+        setTimeout(() => {
+            textElement.classList.remove("fade-in");
+        }, 1000);
+    }, 1000);
+    
 }
+
+let currentIndex = 0;
+
+function rotateCarousel() {
+    const radios = document.getElementsByName("carousel");
+    radios[currentIndex].checked = false; 
+    currentIndex = (currentIndex + 1) % radios.length; 
+    radios[currentIndex].checked = true; 
+
+    updateCarouselText();
+}
+
+
+setInterval(rotateCarousel, 5000);
 
 document.querySelectorAll(".radios input[type='radio']").forEach(radio => {
     radio.addEventListener("change", updateCarouselText);
