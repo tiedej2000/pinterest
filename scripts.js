@@ -27,6 +27,19 @@ window.onclick = function (event) {
         modalsignin.style.display = "none";
     }
 }
+/* ------------------- image sets ----------------------*/
+
+const imageSetOne = {
+    imgOne: "./media/tappas.jpg",
+    imgOneFive: "./media/cake.jpg",
+    imgTwo: "./media/noodles.jpg",
+    imgThree: "./media/coffee.jpg",
+    imgFour: "./media/lasagne.jpg",
+    imgFive: "./media/soup.jpg",
+    imgSix: "./media/tappas.jpg",
+    imgSeven: "./media/ruehrei.jpg",
+    imgSevenFive: "./media/dessert.jpg"
+}
 
 /* ------------------- carousel ----------------------*/
 
